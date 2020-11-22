@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<script type="text/javascript">
+var dnow, d8, mins, s, animate;
+
+function init(){
+
+dnow = new Date();
+d8 = new Date(dnow.getFullYear(),dnow.getMonth(),dnow.getDate(),20,0);  
+mins = Math.round((d8.getTime()-dnow.getTime())/60000);
+clock();
+};
+
+function clock(){
+
+document.getElementById("min").innerHTML=mins;
+mins--;
+animate=setTimeout(clock, 60000);
+};
+
+
+
+window.onload=init;
+</script>
+<style>
+*{
+margin:0 top:1200;
+padding:0;
+font-family:sans-serif;
+font-size:72px;
+}
+
+.clock{
+text-align:center;
+width:auto;
+height:auto;
+}
+</style>
+</head>
+
+<body>
+<div class="clock">
+<span id="min">000</span>
+</div>
+</html>
